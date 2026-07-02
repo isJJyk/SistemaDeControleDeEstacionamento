@@ -1,4 +1,4 @@
-package Sistema;
+package Sistema.entidades.classes;
 
 public class Veiculo {
     private String placa;

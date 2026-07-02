@@ -1,12 +1,14 @@
-package Sistema;
+package Sistema.entidades.classes;
+
+import Sistema.entidades.enums.Pagamento;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Estacionamento {
-    private int totalVagas = 15;
+    private final int totalVagas = 15;
     private List<Veiculo> vagasOcupadas;
-    public String resposta;
+    private final Pagamento[] pagamentos = Pagamento.values();
 
 
     public Estacionamento() {
@@ -46,13 +48,19 @@ public class Estacionamento {
         return pagar;
     }
 
-    public void formaPagamento() {
-        if (resposta.equals(resposta)) {
-            System.out.println("Pagamento aprovado");
-            System.out.println();
-        } else{
-            System.out.println("Pagamento não Autorizado");
-            System.out.println();
+    public void pagamentos() {
+        System.out.println("Escolha sua forma de pagamento: ");
+        for (Pagamento pagamentoOpcoes : pagamentos) {
+            System.out.println(pagamentoOpcoes);
+        }
+    }
+
+    public void formaPagamento(String pagamento) {
+        if (pagamento.equalsIgnoreCase("pix") || pagamento.equalsIgnoreCase("cartao") || pagamento.equalsIgnoreCase("dinheiro")) {
+            System.out.println("Pagamento Aprovado");
+        } else {
+            System.out.println("Pagamento não autorizado");
+            System.exit(0);
         }
 
 

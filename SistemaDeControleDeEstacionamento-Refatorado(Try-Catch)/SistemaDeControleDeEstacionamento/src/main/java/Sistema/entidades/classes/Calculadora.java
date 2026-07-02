@@ -1,4 +1,4 @@
-package Sistema;
+package Sistema.entidades.classes;
 
 public class Calculadora {
     private int horas;
